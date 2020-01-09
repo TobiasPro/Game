@@ -1,7 +1,7 @@
 let x = 100;
 let y = 100;
 let z = 100
-
+//Yeet
 function setup() {
   createCanvas(1280, 720);
 }
