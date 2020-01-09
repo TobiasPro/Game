@@ -11,7 +11,7 @@ function draw() {
   strokeWeight(1);
   stroke(255)
   fill(0)
-  // head
+  // head jep
     if (keyIsDown(LEFT_ARROW)) {
       x -= 5;
     }
