@@ -1,7 +1,9 @@
 let x = 100;
 let y = 100;
 let z = 100
-//Yeet det er blå
+
+//Yeet det er gul
+
 function setup() {
   createCanvas(1280, 720);
 }
