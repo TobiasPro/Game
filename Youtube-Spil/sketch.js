@@ -14,6 +14,7 @@ function draw() {
 function keyReleased() {
     ship.setRotation(0);
 }
+// hi
 
 function keyPressed() {
     if (keyCode == RIGHT_ARROW) {
