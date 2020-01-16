@@ -89,5 +89,5 @@ this.turn = function() {
     this.heading += this.rotation;
 
 }
-
+// Sidste update var ved 18:21 i videon
 }
