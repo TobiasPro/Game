@@ -48,7 +48,6 @@ this.edges = function() {
     } else if (this.pos.y < -this.r) {
         this.pos.y = height + this.r;
     }
-
 }
 
     this.setRotation = function(a) {
