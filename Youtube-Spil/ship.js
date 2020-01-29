@@ -24,12 +24,15 @@ function Ship() {
         this.vel.add(force);    
     } 
 
+    // Jeg putter push og pop rundt om min render så den ikke har en effekt på asteroiderne. (Hvis jeg ikke gør det connecter de 2 translates og asteroids vil følge mit skib)
     this.render = function() {
+        push();
         translate(this.pos.x, this.pos.y);
         rotate(this.heading + PI / 2)
         noFill(0);
         stroke(225);
         triangle(-this.r, this.r, this.r, this.r, 0, -this.r)
+        pop();
 
     }
 

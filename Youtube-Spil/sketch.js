@@ -1,8 +1,15 @@
 //Variabler
 let ship;
+let asteroids = [];
+
 function setup() {
     createCanvas(windowWidth, windowHeight);
     ship = new Ship();
+// Laver 10 astoroids
+    for (let i = 0; i < 10; i++) {
+
+    asteroids.push(new Asteroid());
+} 
 }
 
 // I draw skal man altid kalde en function op for at den ville kunne fungere
@@ -12,6 +19,11 @@ function draw() {
     ship.turn();
     ship.update();
     ship.edges();
+
+    for (let i = 0; i <asteroids.length; i++)  {
+        asteroids[i].render();
+        
+    }
 }
 
 // Det tilføjet jeg så man kunne holde knapperne i bund
