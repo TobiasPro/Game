@@ -5,8 +5,8 @@ let asteroids = [];
 function setup() {
     createCanvas(windowWidth, windowHeight);
     ship = new Ship();
-// Laver 10 astoroids
-    for (let i = 0; i < 10; i++) {
+// Laver 5 astoroids
+    for (let i = 0; i < 5; i++) {
 
     asteroids.push(new Asteroid());
 } 
@@ -22,6 +22,8 @@ function draw() {
 
     for (let i = 0; i <asteroids.length; i++)  {
         asteroids[i].render();
+        asteroids[i].update();
+        asteroids[i].edges();
         
     }
 }
