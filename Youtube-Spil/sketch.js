@@ -1,15 +1,16 @@
 //Variabler
 let ship;
 let asteroids = [];
+let lasers = [];
 
 function setup() {
     createCanvas(windowWidth, windowHeight);
     ship = new Ship();
-// Laver 5 astoroids
-    for (let i = 0; i < 5; i++) {
+    // Laver 5 astoroids
+    for (let i = 0; i < 50; i++) {
 
-    asteroids.push(new Asteroid());
-} 
+        asteroids.push(new Asteroid());
+    }
 }
 
 // I draw skal man altid kalde en function op for at den ville kunne fungere
@@ -20,11 +21,16 @@ function draw() {
     ship.update();
     ship.edges();
 
-    for (let i = 0; i <asteroids.length; i++)  {
+
+    for (let i = 0; i < asteroids.length; i++) {
         asteroids[i].render();
         asteroids[i].update();
         asteroids[i].edges();
-        
+    }
+    // Her gør jeg lige som ved asteroids, hvilket er at få lasers til loop
+    for (let i = 0; i < lasers.length; i++) {
+        lasers[i].render();
+        lasers[i].update();
     }
 }
 
@@ -34,9 +40,12 @@ function keyReleased() {
     ship.boosting(false);
 }
 
-// Her styrer jeg hvordan man skal bevæge skibet
+
 function keyPressed() {
-    if (keyCode == RIGHT_ARROW) {
+    // Her gør jeg så man skal trykke på space for at skyde. Jeg skriver ship.pos i min laser for at få laseren til starte der.
+    if (key == ' ') {
+        lasers.push(new Laser(ship.pos));
+    } else if (keyCode == RIGHT_ARROW) {
         ship.setRotation(0.1);
     } else if (keyCode == LEFT_ARROW) {
         ship.setRotation(-0.1);
