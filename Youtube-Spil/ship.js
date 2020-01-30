@@ -29,7 +29,8 @@ function Ship() {
         push();
         translate(this.pos.x, this.pos.y);
         rotate(this.heading + PI / 2)
-        noFill(0);
+        // 0 betyder det skal være sort
+        fill(0);
         stroke(225);
         triangle(-this.r, this.r, this.r, this.r, 0, -this.r)
         pop();
