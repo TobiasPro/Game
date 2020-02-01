@@ -1,9 +1,9 @@
 
-// position for asteroid vi laver random
-function Asteroid(pos) {
+// position for asteroid vi laver random og vi r giver os r værdien
+function Asteroid(pos, r) {
     if (pos) {
         // Jeg laver en copy fordi begge pos er objects og hvis jeg ikke laver en copy vil de komme til bevæge sig mærkeligt
-        this.pos = pos.copy;
+        this.pos = pos.copy()   
     } else {
         this.pos = createVector(random(width), random(height))
     }
