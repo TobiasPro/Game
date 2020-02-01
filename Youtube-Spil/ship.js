@@ -24,6 +24,18 @@ function Ship() {
         this.vel.add(force);
     }
 
+
+    this.hits = function(asteroid) {
+        // Dist udregner forskellen mellem de 2. 
+        let d = dist(this.pos.x, this.pos.y, asteroid.pos.x, asteroid.pos.y);
+        // Hvis asteroid kommer ind på ships posistion skal den return true ellers return false
+        if (d < this.r + asteroid.r) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     // Jeg putter push og pop rundt om min render så den ikke har en effekt på asteroiderne. (Hvis jeg ikke gør det connecter de 2 translates og asteroids vil følge mit skib)
     this.render = function () {
         push();
